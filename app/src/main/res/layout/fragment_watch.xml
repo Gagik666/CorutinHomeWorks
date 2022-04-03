@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".WatchFragment">
+
+    <ProgressBar
+        android:id="@+id/pbMinute"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="false"
+        android:max="60"
+        android:progressDrawable="@drawable/min"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/pbMinute"/>
+
+    <ProgressBar
+        android:id="@+id/pbSeconds"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="60"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/sec"
+        app:layout_constraintStart_toEndOf="@id/pbMinute"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/pbMISecund"/>
+
+    <ProgressBar
+        android:id="@+id/pbMISecund"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="60"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/min_sec"
+        app:layout_constraintStart_toEndOf="@id/pbSeconds"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/tvMin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="00"
+        style="@style/StyleTvWatch"
+        app:layout_constraintStart_toStartOf="@id/pbMinute"
+        app:layout_constraintTop_toTopOf="@id/pbMinute"
+        app:layout_constraintEnd_toEndOf="@id/pbMinute"
+        app:layout_constraintBottom_toBottomOf="@id/pbMinute"/>
+
+    <TextView
+        android:id="@+id/tvSeconds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="00"
+        style="@style/StyleTvWatch"
+        app:layout_constraintStart_toStartOf="@id/pbSeconds"
+        app:layout_constraintTop_toTopOf="@id/pbSeconds"
+        app:layout_constraintEnd_toEndOf="@id/pbSeconds"
+        app:layout_constraintBottom_toBottomOf="@id/pbSeconds"/>
+
+    <TextView
+        android:id="@+id/tvMiSeconds"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="00"
+        style="@style/StyleTvWatch"
+        app:layout_constraintStart_toStartOf="@id/pbMISecund"
+        app:layout_constraintTop_toTopOf="@id/pbMISecund"
+        app:layout_constraintEnd_toEndOf="@id/pbMISecund"
+        app:layout_constraintBottom_toBottomOf="@id/pbMISecund"/>
+
+    <Button
+        android:id="@+id/btnStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pbMinute" />
+
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="112dp"
+        android:text="stop"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pbMinute" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

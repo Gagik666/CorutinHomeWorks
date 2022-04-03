@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.corutinhomework.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_appleInputFragment"
+            app:destination="@id/appleInputFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_watchFragment"
+            app:destination="@id/watchFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appleInputFragment"
+        android:name="com.example.corutinhomework.AppleTask.AppleInputFragment"
+        android:label="fragment_apple_input"
+        tools:layout="@layout/fragment_apple_input" >
+        <action
+            android:id="@+id/action_appleInputFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_appleInputFragment_to_appleResultFragment"
+            app:destination="@id/appleResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/appleResultFragment"
+        android:name="com.example.corutinhomework.AppleTask.AppleResultFragment"
+        android:label="fragment_apple_result"
+        tools:layout="@layout/fragment_apple_result" >
+        <argument
+            android:name="num"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="maxNum"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/watchFragment"
+        android:name="com.example.corutinhomework.WatchFragment"
+        android:label="fragment_watch"
+        tools:layout="@layout/fragment_watch" />
+</navigation>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="25dp"
+    android:background="#9E7C6C"
+    tools:context=".AppleTask.AppleResultFragment">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:paddingBottom="10dp"
+        android:text="@string/initial_quantity"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tv2"
+        app:layout_constraintEnd_toStartOf="@id/tvRNum"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvRNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:paddingStart="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/tvCurrent"
+        app:layout_constraintStart_toEndOf="@id/tv1"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/current_quantity"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/tvCurrent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv1" />
+
+    <TextView
+        android:id="@+id/tvCurrent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/tv2"
+        app:layout_constraintTop_toBottomOf="@id/tvRNum"
+        tools:text="0" />
+
+    <ImageView
+        android:id="@+id/imgReversh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="5dp"
+        android:paddingStart="10dp"
+        android:src="@drawable/icone_refresh"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@id/tv2"
+        app:layout_constraintTop_toBottomOf="@id/tvRNum" />
+
+    <ImageView
+        android:id="@+id/img3"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_apple"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/img2"
+        app:layout_constraintStart_toEndOf="@id/img2" />
+
+    <ImageView
+        android:id="@+id/img2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_apple"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/img1"
+        app:layout_constraintStart_toEndOf="@id/img1" />
+
+    <ImageView
+        android:id="@+id/img1"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_apple"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/cvBox"
+        app:layout_constraintStart_toEndOf="@id/cvBox" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#9E7C6C"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="100dp"
+        app:layout_constraintStart_toStartOf="@id/pbCircle"
+        app:layout_constraintTop_toTopOf="@id/pbCircle"
+        app:layout_constraintEnd_toEndOf="@id/pbCircle"
+        app:layout_constraintBottom_toBottomOf="@id/pbCircle">
+
+        <ImageView
+            android:id="@+id/imgBox"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/box" />
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/pbCircle"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrent"/>
+
+
+
+    <TextView
+        android:id="@+id/tvP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/progressBar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pbCircle" />
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressBar"
+        tools:text="info . . ." />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flowBottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#9F6445"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="btnAdd, btnReset, btnRed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        style="@style/StyleBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autoSizeTextType="uniform"
+        android:text="@string/add"
+        app:layout_constraintBottom_toBottomOf="@id/flowBottom"
+        app:layout_constraintEnd_toStartOf="@id/btnReset"
+        app:layout_constraintStart_toStartOf="@id/flowBottom"
+        app:layout_constraintTop_toTopOf="@id/flowBottom" />
+
+    <Button
+        android:id="@+id/btnReset"
+        style="@style/StyleBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/reset"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/flowBottom"
+        app:layout_constraintEnd_toStartOf="@id/btnRed"
+        app:layout_constraintStart_toEndOf="@id/btnAdd"
+        app:layout_constraintTop_toTopOf="@id/flowBottom" />
+
+    <Button
+        android:id="@+id/btnRed"
+        style="@style/StyleBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/red"
+        app:layout_constraintBottom_toBottomOf="@id/flowBottom"
+        app:layout_constraintEnd_toEndOf="@id/flowBottom"
+        app:layout_constraintStart_toEndOf="@id/btnReset"
+        app:layout_constraintTop_toTopOf="@id/flowBottom" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
